@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\RegisterController;
+use App\Http\Controllers\API\adduserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,10 @@ use App\Http\Controllers\API\RegisterController;
 Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'register');
     Route::post('login', 'login');
+});
+
+Route::controller(adduserController::class)->group(function(){
+    Route::post('adduser', 'adduser');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
